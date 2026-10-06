@@ -1,0 +1,54 @@
+name: call_recorder
+description: "Phase 1 POC — automatic cellular call recording with both-sides validation (Arabic-first)."
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.6.1
+
+  # Local database
+  drift: ^2.28.2
+  sqlite3_flutter_libs: ^0.5.42
+
+  # Filesystem / paths
+  path: ^1.9.1
+  path_provider: ^2.1.5
+
+  # Permissions
+  permission_handler: ^12.0.1
+
+  # Audio playback
+  just_audio: ^0.9.46
+
+  # Formatting / i18n
+  intl: ^0.20.2
+
+  # Settings / remembered compatibility result
+  shared_preferences: ^2.3.5
+
+  cupertino_icons: ^1.0.8
+  uuid: ^4.5.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  build_runner: ^2.4.13
+  drift_dev: ^2.28.2
+
+# analyzer 14.5.0 removed an API that build_runner 2.16.1 still calls, though it allows <15.
+# Pin to 14.4.0 so code generation compiles. Remove once build_runner ships a 14.5-compatible release.
+dependency_overrides:
+  analyzer: 14.4.0
+
+flutter:
+  uses-material-design: true
